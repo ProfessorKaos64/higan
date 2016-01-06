@@ -1,0 +1,4 @@
+out/higan-balanced usr/bin
+out/higan-accuracy usr/bin
+out/higan-performance usr/bin
+debian/higan.xpm usr/share/pixmaps

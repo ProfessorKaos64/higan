@@ -1,12 +1,44 @@
 Source: higan
-Section: games
+Section: otherosfs
 Priority: optional
-Maintainer: SteamOS-Tools Signing Key <mdeguzis@gmail.com>
-Build-Depends: debhelper (>= 9)
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders: Tobias Hansen <thansen@debian.org>
+Build-Depends: debhelper (>= 9),
+               libgtk2.0-dev,
+               libsdl1.2-dev,
+               libpulse-dev,
+               libopenal-dev,
+               libao-dev,
+               libxv-dev,
+               libudev-dev [linux-any],
+               libasound2-dev [linux-any],
+               g++-4.8
 Standards-Version: 3.9.5
-Homepage: https://github.com/ProfessorKaos64/higan
+Vcs-Git: git://anonscm.debian.org/pkg-games/higan.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-games/higan.git
+Homepage: http://byuu.org/higan/
 
 Package: higan
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Accurate Nintendo multi-system emulator
+ higan is an emulator for Nintendos SNES, NES, Gameboy, Gameboy Color
+ and Gameboy Advance. It was formerly called bsnes and the SNES
+ emulation is especially complete and polished.
+ .
+ higan strives to provide the most faithful hardware emulation possible.
+ It focuses on accuracy and clean code, rather than speed and special
+ features. It is meant as a reference emulator to document how the underlying
+ hardware works. As a result the minimum system requirements are high.
+ .
+ There are three profiles that govern the amount of accuracy and required
+ system resources of the SNES emulation. Which profile to use can be set with:
+ .
+ # update-alternatives --config higan
+
+Package: bsnes
+Depends: higan, ${misc:Depends}
 Architecture: all
-Depends: ${misc:Depends},
-Description: A cycle acurage Nintendo multi-system emulator 
+Section: oldlibs
+Description: transitional dummy package
+ This is a transitional dummy package. It can safely be removed.
