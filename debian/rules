@@ -12,8 +12,8 @@ endif
 # We have to clean manually because the Makefile does not support distclean,
 # and does not remove compiled higan binary
 override_dh_auto_clean:
-	$(MAKE) clean
-	$(MAKE) --directory=ananke clean
+	make clean
+	make --directory=ananke clean
 	rm -rf obj out ananke/obj
 
 override_dh_auto_build:
