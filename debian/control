@@ -1,0 +1,12 @@
+Source: higan
+Section: games
+Priority: optional
+Maintainer: SteamOS-Tools Signing Key <mdeguzis@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://github.com/ProfessorKaos64/higan
+
+Package: higan
+Architecture: all
+Depends: ${misc:Depends},
+Description: A cycle acurage Nintendo multi-system emulator 
