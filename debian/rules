@@ -9,13 +9,6 @@ endif
 %:
 	dh $@ --parallel
 
-# We have to clean manually because the Makefile does not support distclean,
-# and does not remove compiled higan binary
-override_dh_auto_clean:
-	make clean
-	make --directory=ananke clean
-	rm -rf obj out ananke/obj
-
 override_dh_auto_build:
 	mkdir -p obj out ananke/obj
 	dh_auto_build -- profile=balanced name=higan-balanced
